@@ -9,11 +9,8 @@ import sys
 dossier_actuel = os.path.dirname(os.path.abspath(__file__))
 chemin_modele  = os.path.join(dossier_actuel, 'mon_pokedex.keras')
 
-# Toutes les classes possibles (doit correspondre à l'ordre alphabétique du dataset)
-# Starter seuls  → ['Bulbasaur', 'Charmander', 'Squirtle']
-# Avec évolutions → ajoutez les noms en respectant l'ordre alphabétique
 CLASS_NAMES = [
-    'Blastoise',   # B avant C
+    'Blastoise',   
     'Bulbasaur',
     'Charizard',
     'Charmander',
@@ -79,13 +76,13 @@ def predire(chemin_image: str) -> None:
 #  UTILISATION
 # ─────────────────────────────────────────────
 if __name__ == "__main__":
-    # ── Mode ligne de commande : python prediction.py mon_image.jpg ──
+    #  Mode ligne de commande : python prediction.py mon_image.jpg 
     if len(sys.argv) > 1:
         for fichier in sys.argv[1:]:
             chemin = os.path.join(dossier_actuel, fichier)
             predire(chemin)
 
-    # ── Mode interactif (aucun argument) ──
+    #  Mode interactif (aucun argument) 
     else:
         print("=== PokéDex – Reconnaissance de Pokémon ===\n")
         print("Entrez le nom du fichier image (ex: pikachu.jpg)")
